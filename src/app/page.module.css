@@ -1,0 +1,33 @@
+.container1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.verAlimentos,
+.importancia,
+.controle {
+  width: 100%; /* Alterado para 100% para ocupar a largura total */
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .verAlimentos,
+  .importancia,
+  .controle {
+    font-size: 14px; /* Redimensiona o tamanho do texto */
+  }
+
+  .containerCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%; /* Alterado para 100% para ocupar a largura total */
+  }
+
+  .controle {
+    margin-bottom: 20px;
+  }
+}
