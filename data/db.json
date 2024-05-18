@@ -1,19 +1,8 @@
 {
-  "quotes": [
+  "comidas": [
     {
-      "id": "2",
-      "text": "Eu prefiro morrer do que perder a vida",
-      "author": "Chaves"
-    },
-    {
-      "id": "4",
-      "text": "Bora, gente!",
-      "author": "Pedro Cacique"
-    },
-    {
-      "id": "10",
-      "author": "SS",
-      "text": "KKK"
+      "id": "1",
+      "nome": "Feijão"
     }
   ]
 }
