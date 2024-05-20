@@ -1,0 +1,13 @@
+{
+  "comidas": [
+    {
+      "id": {
+        "timestamp": 1594720958,
+        "date": "2020-07-14T10:02:38.000+00:00"
+      },
+      "descricao": "Alface",
+      "quantidade": "1 pé (600 g)",
+      "calorias": "90 kcal"
+    }
+  ]
+}

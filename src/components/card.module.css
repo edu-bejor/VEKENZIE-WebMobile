@@ -1,0 +1,59 @@
+.container1 {
+    width: 150px;
+    height: 250px;
+    background-color: #EBEDEE;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicione uma sombra sutil */
+    overflow: hidden; /* Garante que o conteúdo não saia dos limites do card */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out; /* Adicione uma transição para a animação de hover */
+}
+
+.container1:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.img {
+    width: 100%;
+    height: 40%;
+    background-image: url('https://ceagesp.gov.br/wp-content/uploads/2016/10/batataportal-412x322.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajuste para cobrir toda a área */
+    background-position: center; /* Centralize a imagem */
+}
+
+.textos {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centralize o conteúdo verticalmente */
+    padding: 10px; /* Adicione padding para melhor espaçamento */
+    padding-top: 0px;
+    text-align: center;
+}
+
+.textos h1 {
+    font-size: 15px;
+    margin: 5px 0; /* Ajuste as margens para melhor espaçamento */
+    color: #333; /* Cor do texto */
+}
+
+.textos p {
+    font-size: 13px;
+    margin: 5px 0; /* Ajuste as margens para melhor espaçamento */
+    color: #666; /* Cor do texto */
+}
+
+/* Responsividade para telas menores que 600px */
+@media screen and (max-width: 600px) {
+
+    .textos h1 {
+        font-size: 14px;
+    }
+
+    .textos p {
+        font-size: 12px;
+    }
+}

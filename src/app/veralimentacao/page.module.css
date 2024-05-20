@@ -1,0 +1,156 @@
+.pesquisa {
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+    height: 100%;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.botaopesquisa {
+    width: 50px;
+    height: 100%;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.resultado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+    justify-content: space-around;
+}
+
+.container1 {
+    width: 150px;
+    height: 250px;
+    background-color: #EBEDEE;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.titulo{
+    color: #63E100;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.Botao{
+    background-color: #63E100;
+    margin-bottom: 10px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.botaoadicionar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Responsividade para telas menores que 600px */
+@media screen and (max-width: 600px) {
+    .pesquisa {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    .input {
+        width: 80%;
+        border-radius: 5px;
+    }
+
+    .botaopesquisa {
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+    }
+
+    .resultado {
+        justify-content: center;
+    }
+
+    .resultado > div {
+        flex: 0 0 25%;
+        margin-bottom: 10px;
+    }
+
+    .mobile{
+        position: relative;
+        width: 100%;
+        height: 10px;
+        background-color: white;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .titulo{
+        margin-top: 10px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .botaoadicionar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: relative;
+        bottom: 34px;
+        left: 60px;
+        cursor: pointer;
+    }
+}

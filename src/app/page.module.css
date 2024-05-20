@@ -1,0 +1,96 @@
+.container1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.containerCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.seta_icon{
+  width: 50px;
+}
+
+.verAlimentos,
+.importancia,
+.controle {
+  width: 100%;
+  text-align: center;
+}
+
+.Botao {
+  background-color: #63E100;
+  margin-bottom: 10px;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  width: 150px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.seta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .container1{
+    border-radius: 10px;
+  }
+
+  .verAlimentos{
+    border-radius: 10px;
+    position: relative;
+    background-color: white;
+    bottom: 10px;
+  }
+
+  .Botao{
+    margin-bottom: 0;
+  }
+
+  .verAlimentos,
+  .importancia,
+  .controle {
+    font-size: 14px;
+  }
+
+  .containerCard {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .controle {
+    margin-bottom: 20px;
+  }
+
+  .seta{
+    display: none;
+  }
+
+  .seta_icon{
+    display: none;
+  }
+}
