@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client"
 import React, { useState, useEffect } from 'react';
 import Menu from "@/components/menu";
@@ -86,5 +87,17 @@ export default function Alimentos() {
                 ))}
             </div>
         </div>
+=======
+import Link from "next/link";
+import Menu from "@/components/menu";
+
+export default function VerAlimentacao(){
+    return (
+        <>
+            <Menu/>
+            <h1>Ver Alimentação</h1>
+            <Link href="/">Voltar</Link>
+        </>
+>>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
     );
 }

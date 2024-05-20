@@ -1,6 +1,7 @@
 {
   "comidas": [
     {
+<<<<<<< HEAD
       "id": {
         "timestamp": 1594720958,
         "date": "2020-07-14T10:02:38.000+00:00"
@@ -8,6 +9,10 @@
       "descricao": "Alface",
       "quantidade": "1 pé (600 g)",
       "calorias": "90 kcal"
+=======
+      "id": "1",
+      "nome": "Feijão"
+>>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
     }
   ]
 }

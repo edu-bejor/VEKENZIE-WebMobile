@@ -6,6 +6,7 @@
   gap: 10px;
 }
 
+<<<<<<< HEAD
 .containerCard {
   display: flex;
   flex-direction: row;
@@ -72,19 +73,40 @@
   .importancia,
   .controle {
     font-size: 14px;
+=======
+.verAlimentos,
+.importancia,
+.controle {
+  width: 100%; /* Alterado para 100% para ocupar a largura total */
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .verAlimentos,
+  .importancia,
+  .controle {
+    font-size: 14px; /* Redimensiona o tamanho do texto */
+>>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
   }
 
   .containerCard {
     display: flex;
+<<<<<<< HEAD
     flex-direction: row;
     margin-top: 10px;
     gap: 10px;
     width: 100%;
+=======
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%; /* Alterado para 100% para ocupar a largura total */
+>>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
   }
 
   .controle {
     margin-bottom: 20px;
   }
+<<<<<<< HEAD
 
   .seta{
     display: none;
@@ -93,4 +115,6 @@
   .seta_icon{
     display: none;
   }
+=======
+>>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
 }
