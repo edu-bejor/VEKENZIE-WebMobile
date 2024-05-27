@@ -5,9 +5,9 @@
     justify-content: center;
     border: 2px solid black;
     border-radius: 5px;
-    padding: 5px; /* Adiciona padding para garantir espaçamento interno */
-    height: 50px; /* Define uma altura fixa para a barra de pesquisa */
-    box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho total */
+    padding: 5px;
+    height: 50px;
+    box-sizing: border-box;
 }
 
 .input {
@@ -15,23 +15,23 @@
     padding: 8px;
     border: none;
     outline: none;
-    height: 100%; /* Garante que o input ocupe toda a altura da barra de pesquisa */
-    box-sizing: border-box; /* Inclui padding no cálculo do tamanho total */
-    border-top-left-radius: 5px; /* Bordas arredondadas nas partes superiores esquerda e direita */
+    height: 100%;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
 
 .botaopesquisa {
     width: 50px;
-    height: 100%; /* Garante que o botão ocupe toda a altura da barra de pesquisa */
+    height: 100%;
     border: none;
-    border-top-right-radius: 5px; /* Bordas arredondadas nas partes superiores direita e esquerda */
+    border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza o conteúdo do botão */
-    box-sizing: border-box; /* Inclui padding no cálculo do tamanho total */
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .resultado {
@@ -47,8 +47,8 @@
     height: 250px;
     background-color: #EBEDEE;
     border-radius: 10px;
-    overflow: hidden; /* Garante que o conteúdo não vaze das bordas arredondadas */
-    box-sizing: border-box; /* Inclui padding e bordas no cálculo do tamanho total */
+    overflow: hidden; 
+    box-sizing: border-box; 
 }
 
 .titulo{
@@ -58,24 +58,23 @@
     font-size: 1.5em;
 }
 
-/* Responsividade para telas menores que 600px */
 @media screen and (max-width: 600px) {
     .pesquisa {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        height: auto; /* Deixa a altura automática para se ajustar ao conteúdo */
+        height: auto; 
     }
 
     .input {
         width: 80%;
-        border-radius: 5px; /* Bordas arredondadas completas para o input */
+        border-radius: 5px;
     }
 
     .botaopesquisa {
         width: 25px;
-        height: 25px; /* Ajusta a altura do botão para dispositivos móveis */
-        border-radius: 5px; /* Bordas arredondadas completas para o botão */
+        height: 25px; 
+        border-radius: 5px;
     }
 
     .resultado {
@@ -83,7 +82,7 @@
     }
 
     .resultado > div {
-        flex: 0 0 25%; /* Dois cards lado a lado ocupando aproximadamente metade da tela cada */
+        flex: 0 0 25%;
         margin-bottom: 10px;
     }
 
@@ -93,6 +92,7 @@
         height: 10px;
         background-color: white;
         border-radius: 10px 10px 0 0;
+        bottom: 9px;
     }
 
     .titulo{

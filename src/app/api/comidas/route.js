@@ -10,8 +10,4 @@ export async function GET(req) {
     } catch (error) {
         console.log(error);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b

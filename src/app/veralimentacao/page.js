@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 "use client"
 import React, { useState, useEffect } from 'react';
 import Menu from "@/components/menu";
 import Style from './page.module.css';
 import Link from 'next/link';
-import { getComidas } from '@/utils/api'; // Importação do método correto
+import { deleteComida, getComidas } from '@/utils/api';
+import CardAlimentos from '@/components/cardAlimentos';
 
 export default function Alimentos() {
     const [comidasPorDia, setComidasPorDia] = useState([]);
@@ -14,10 +14,12 @@ export default function Alimentos() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const comidas = await getComidas(); // Obter os dados corretamente
-
+                const comidasResponse = await fetch("http://localhost:8000/comidas");
+                if (!comidasResponse.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                const comidas = await comidasResponse.json();
                 const comidasOrganizadasPorDia = organizarComidasPorDia(comidas);
-
                 setComidasPorDia(comidasOrganizadasPorDia);
                 setLoading(false);
             } catch (error) {
@@ -26,25 +28,19 @@ export default function Alimentos() {
                 setLoading(false);
             }
         }
-
         fetchData();
     }, []);
 
     const organizarComidasPorDia = (comidas) => {
         const comidasPorDia = {};
-
         comidas.forEach((comida) => {
-            const data = new Date(comida.id.timestamp * 1000).toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric'
-            });
-            if (!comidasPorDia[data]) {
-                comidasPorDia[data] = [];
+            const dataParts = comida.date.split('/');
+            const formattedDate = `${dataParts[0]}/${dataParts[1]}/${dataParts[2]}`;
+            if (!comidasPorDia[formattedDate]) {
+                comidasPorDia[formattedDate] = [];
             }
-            comidasPorDia[data].push(comida);
+            comidasPorDia[formattedDate].push(comida);
         });
-
         return comidasPorDia;
     };
 
@@ -54,50 +50,48 @@ export default function Alimentos() {
         }, 0);
     };
 
+    const handleDeleteComida = async (date) => {
+        try {
+            const comidasParaDeletar = comidasPorDia[date];
+            const promises = comidasParaDeletar.map(comida => deleteComida(comida.id.timestamp));
+            await Promise.all(promises);
+    
+            // Remover a data dos comidasPorDia
+            const updatedComidas = { ...comidasPorDia };
+            delete updatedComidas[date];
+            setComidasPorDia(updatedComidas);
+        } catch (error) {
+            console.error("Erro ao excluir comida:", error);
+        }
+    };
+
     if (loading) {
-        return <div>Carregando...</div>;
+        return <div className={Style.carregando}>Carregando...</div>;
     }
 
     if (error) {
-        return <div>Ocorreu um erro: {error.message}</div>;
+        return <div className={Style.ocorreuerro}>Ocorreu um erro: {error.message}</div>;
     }
 
     return (
         <div>
             <Menu />
+            <div className={Style.mobile}></div>
             <div className={Style.header}>
-                <div className={Style.mobile}></div>
                 <h1 className={Style.titulo}>Meu Controle</h1>
                 <button className={Style.Botao}><Link className={Style.link} href="/registraralimentacao">ADICIONAR</Link></button>
             </div>
             <div className={Style.resultado}>
                 {Object.entries(comidasPorDia).map(([data, comidas]) => (
-                    <div key={data} className={Style.cardWrapper}>
-                        <h2>ALIMENTOS:</h2>
-                        <ul>
-                            {comidas.map((comida, index) => (
-                                <li key={index}>
-                                    <p>{comida.descricao} ({comida.quantidade})</p>
-                                </li>
-                            ))}
-                        </ul>
-                        <p>DATA: {data}</p>
-                        <p>TOTAL DE CALORIAS: {calcularCaloriasTotais(comidas)}KCAL</p>
-                    </div>
+                    <CardAlimentos
+                        key={data}
+                        data={data}
+                        comidas={comidas}
+                        handleDeleteComida={handleDeleteComida}
+                        calcularCaloriasTotais={calcularCaloriasTotais}
+                    />
                 ))}
             </div>
         </div>
-=======
-import Link from "next/link";
-import Menu from "@/components/menu";
-
-export default function VerAlimentacao(){
-    return (
-        <>
-            <Menu/>
-            <h1>Ver Alimentação</h1>
-            <Link href="/">Voltar</Link>
-        </>
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
     );
 }

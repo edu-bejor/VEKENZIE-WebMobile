@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client"
 import React, { useState } from 'react';
 import Card from "@/components/card";
@@ -21,11 +20,24 @@ export default function Alimentos() {
     };
 
     const handleAddToJSON = async (comida) => {
+        const currentTimestamp = Math.floor(Date.now() / 1000);
+        const currentDate = new Date().toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'}).split(', ')[0];
+
+        const newComida = {
+            ...comida,
+            timestamp: currentTimestamp,
+            date: currentDate,
+            id: {
+                timestamp: currentTimestamp,
+                date: currentDate
+            }
+        };
+
         try {
             const response = await fetch("http://localhost:8000/comidas", {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(comida)
+                body: JSON.stringify(newComida)
             });
 
             if (response.status === 201) {
@@ -42,7 +54,7 @@ export default function Alimentos() {
     return (
         <div>
             <Menu />
-            <div className={Style.mobile}></div>
+            <div className={Style.curva}></div>
             <h1 className={Style.titulo}>Registrar Alimentação</h1>
             <div className={Style.pesquisa}>
                 <input
@@ -60,7 +72,7 @@ export default function Alimentos() {
             </div>
             <div className={Style.resultado}>
                 {comidas && comidas.map((comida) => (
-                    <div key={comida.id} className={Style.cardWrapper}>
+                    <div key={comida.id.timestamp} className={Style.cardWrapper}>
                         <Card {...comida} />
                         <button className={Style.botaoadicionar} onClick={() => handleAddToJSON(comida)}><img src='https://super.so/icon/light/plus.svg'></img></button>
                     </div>
@@ -69,17 +81,3 @@ export default function Alimentos() {
         </div>
     );
 }
-=======
-import Link from "next/link";
-import Menu from "@/components/menu";
-
-export default function RegistrarAlimentacao(){
-    return (
-        <>
-            <Menu/>
-            <h1>Registrar Alimentação</h1>
-            <Link href="/">Voltar</Link>
-        </>
-    );
-}
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b

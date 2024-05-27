@@ -1,0 +1,117 @@
+.cardAlimentos {
+    background-color: #EBEDEE;
+    padding: 15px;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.lista {
+    padding-left: 25px;
+    display: block;
+    margin-top: -5px;
+}
+
+.foto {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.alimentos {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+.datas, .totalcal, .kcal {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.total{
+    display: flex;
+    white-space: nowrap;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+}
+
+.comida{
+    padding: 1px;
+    margin: 1px;
+}
+
+.kcal{
+    color: #63E100;
+}
+
+.edicao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edicao img {
+    width: 40px;
+    height: 40px;
+}
+
+.excluirprinc {
+    position: relative;
+    display: inline-block;
+}
+
+.excluir {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.excluir span {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .cardAlimentos {
+        max-width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
+    .resultado {
+        justify-content: center;
+    }
+
+    .resultado > div {
+        flex: 0 0 25%;
+        margin-bottom: 10px;
+    }
+
+    .mobile{
+        position: relative;
+        width: 100%;
+        height: 10px;
+        background-color: white;
+        border-radius: 10px 10px 0 0;
+        bottom: 9px;
+    }
+
+    .titulo{
+        margin-top: 10px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,18 +1,114 @@
 {
   "comidas": [
     {
-<<<<<<< HEAD
       "id": {
-        "timestamp": 1594720958,
-        "date": "2020-07-14T10:02:38.000+00:00"
+        "timestamp": 1716676249,
+        "date": "23/05/2024"
       },
       "descricao": "Alface",
-      "quantidade": "1 pé (600 g)",
-      "calorias": "90 kcal"
-=======
-      "id": "1",
-      "nome": "Feijão"
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
+      "quantidade": "1 pé (600 g)",
+      "calorias": "90 kcal",
+      "timestamp": 1716676249,
+      "date": "23/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716676249,
+        "date": "24/05/2024"
+      },
+      "descricao": "Alface",
+      "quantidade": "1 pé (600 g)",
+      "calorias": "90 kcal",
+      "timestamp": 1716676249,
+      "date": "24/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716676249,
+        "date": "25/05/2024"
+      },
+      "descricao": "Alface",
+      "quantidade": "1 pé (600 g)",
+      "calorias": "90 kcal",
+      "timestamp": 1716676249,
+      "date": "25/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716740181,
+        "date": "25/05/2024"
+      },
+      "descricao": "Ovo",
+      "quantidade": "1 ovo (56 g)",
+      "calorias": "54 kcal",
+      "timestamp": 1716740181,
+      "date": "25/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716756462,
+        "date": "25/05/2024"
+      },
+      "descricao": "Banana",
+      "quantidade": "1 banana (125 g)",
+      "calorias": "111 kcal",
+      "timestamp": 1716756462,
+      "date": "25/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716757289,
+        "date": "26/05/2024"
+      },
+      "descricao": "Ovo",
+      "quantidade": "1 ovo (56 g)",
+      "calorias": "54 kcal",
+      "timestamp": 1716757289,
+      "date": "26/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716757341,
+        "date": "26/05/2024"
+      },
+      "descricao": "Abacaxi",
+      "quantidade": "1 abacaxi (905 g)",
+      "calorias": "453 kcal",
+      "timestamp": 1716757341,
+      "date": "26/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716758436,
+        "date": "26/05/2024"
+      },
+      "descricao": "Abacate",
+      "quantidade": "1 abacate (200 g)",
+      "calorias": "320 kcal",
+      "timestamp": 1716758436,
+      "date": "26/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716761483,
+        "date": "26/05/2024"
+      },
+      "descricao": "Agrião",
+      "quantidade": "1 ramo (1 g)",
+      "calorias": "0 kcal",
+      "timestamp": 1716761483,
+      "date": "26/05/2024"
+    },
+    {
+      "id": {
+        "timestamp": 1716771777,
+        "date": "26/05/2024"
+      },
+      "descricao": "Grãos de soja",
+      "quantidade": "1 xícara (256 g)",
+      "calorias": "376 kcal",
+      "timestamp": 1716771777,
+      "date": "26/05/2024"
     }
   ]
 }

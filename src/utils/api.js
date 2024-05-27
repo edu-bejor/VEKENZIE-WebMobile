@@ -1,103 +1,55 @@
-<<<<<<< HEAD
 // -------------- CREATE --------------
-export async function addQuote(quote) {
-    try {
-        const response = await fetch("http://localhost:8000/comidas", {
-=======
-
-// -------------- CREATE --------------
-export async function addQuote(quote) {
-    try {
-        const response = await fetch("http://localhost:5000/comidas", {
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
+export async function addComida(comida){
+    try{
+        let response = await fetch("http://localhost:8000/comidas", 
+        {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(quote)
-        });
-
-        return response.status;
-    } catch (error) {
-        console.log("ERROR: " + error);
+            body: JSON.stringify(comida)
+        })
+        return response.status
+    } catch(error) {
+        console.log("ERROR: " + error)
     }
 }
 
 // -------------- READ ----------------
-<<<<<<< HEAD
-export async function getComidas() {
-    try {
-        const response = await fetch("http://localhost:8000/comidas");
-=======
-export async function getcomidas() {
-    try {
-        const response = await fetch("http://localhost:5000/comidas");
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.log("ERROR: " + error);
-<<<<<<< HEAD
-        throw new Error('Erro ao buscar comidas');
-=======
-    }
-}
-
-export async function getcomidasByAuthor(author) {
-    try {
-        let response = await fetch(`http://localhost:5000/comidas?author=${author}`)
+export async function getComidas(){
+    try{
+        let response = await fetch("http://localhost:8000/comidas")
         let data = await response.json()
         return data
-    } catch (error) {
+    } catch(error) {
         console.log("ERROR: " + error)
-    }
-}
-
-export async function getQuoteById(id) {
-    try {
-        let response = await fetch(`http://localhost:5000/comidas?id=${id}`)
-        let data = await response.json()
-        return data
-    } catch (error) {
-        console.log("ERROR: " + error)
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
     }
 }
 
 // ------------------- UPDATE -------------------
-export async function updateQuote(quote) {
-    try {
-<<<<<<< HEAD
-        let response = await fetch("http://localhost:8000/comidas/" + quote.id,
-=======
-        let response = await fetch("http://localhost:5000/comidas/" + quote.id,
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
-            {
-                method: 'PUT',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(quote)
-            })
+export async function updateComida(comida){
+    try{
+        let response = await fetch("http://localhost:8000/comidas/" + comida.timestamp, 
+        {
+            method: 'PUT',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(comida)
+        })
         return response.status
-    } catch (error) {
+    } catch(error) {
         console.log("ERROR: " + error)
     }
 }
 
-<<<<<<< HEAD
 // --------------------- DELETE ----------------------
-export async function deleteQuote(id) {
+export async function deleteComida(timestamp){
     try {
-        let response = await fetch("http://localhost:8000/comidas/" + id,
-=======
+        const response = await fetch(`http://localhost:8000/comidas?id.timestamp=${timestamp}`, {
+            method: 'DELETE',
+            headers: { "Content-Type": "application/json" }
+        });
 
-// --------------------- DELETE ----------------------
-export async function deleteQuote(id) {
-    try {
-        let response = await fetch("http://localhost:5000/comidas/" + id,
->>>>>>> 23cca3be5b4f62680f13ec5620d2a68100c2d40b
-            {
-                method: 'DELETE'
-            })
-        return response.status
-    } catch (error) {
-        console.log("ERROR: " + error)
+        return response.status;
+    } catch(error) {
+        console.error("ERROR: ", error);
+        throw error;
     }
 }
